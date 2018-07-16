@@ -52,6 +52,7 @@
     "react-router-redux": "^5.0.0-alpha.9",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
+    "redux-loop": "4.2.4",
     "redux-mock-store": "^1.5.1",
     "redux-thunk": "^2.2.0",
     "slug": "^0.9.1",

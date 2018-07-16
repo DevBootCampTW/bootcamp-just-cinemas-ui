@@ -6042,6 +6042,10 @@ redux-logger@^3.0.6:
   dependencies:
     deep-diff "^0.3.5"
 
+redux-loop@4.2.4:
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/redux-loop/-/redux-loop-4.2.4.tgz#d497ddf79ebdfc16b3aa9006f5d0a7a442e6bd6c"
+
 redux-mock-store@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/redux-mock-store/-/redux-mock-store-1.5.1.tgz#fca4335392e66605420b5559fe02fc5b8bb6d63c"
