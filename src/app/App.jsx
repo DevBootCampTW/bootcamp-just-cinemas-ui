@@ -4,10 +4,10 @@ import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
 import configureStore from './store';
 import createHistory from 'history/createBrowserHistory'
-import Header from './Header'
-import Home from './Home'
-import MovieDetails from '../components/MovieDetails';
-import FourOhFour from '../components/FourOhFour';
+import Header from '../components/Header'
+import Home from '../pages/Home'
+import MovieDetails from '../pages/MovieDetails';
+import FourOhFour from '../pages/FourOhFour';
 
 
 const browserHistory = createHistory()

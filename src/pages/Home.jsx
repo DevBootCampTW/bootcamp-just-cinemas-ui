@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieGrid from '../movies/MovieGrid';
+import MovieGrid from '../components/MovieGrid';
 
 const Home = () => (
   <div>

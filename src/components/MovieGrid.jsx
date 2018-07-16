@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MovieItem from './MovieItem';
 import { connect } from 'react-redux';
-import fetchMovies from './actions';
+import fetchMovies from '../actions/movies';
 
 class MovieGrid extends Component {
 
