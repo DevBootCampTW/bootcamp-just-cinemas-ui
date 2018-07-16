@@ -5,8 +5,7 @@ class MovieDetails extends React.Component {
   componentDidMount(){
     const movieId = this.props.match.params.id;
     if(movieId){
-      console.log(movieId);
-      // api call
+      this.props.getMovieDetails(movieId);
     }
   }
 
