@@ -7,7 +7,7 @@ import fetchMovies from './actions';
 class MovieGrid extends Component {
 
   componentDidMount() {
-    this.props.fetchMovies()
+    // this.props.fetchMovies()
   }
 
   render() {
