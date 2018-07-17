@@ -8,6 +8,7 @@ import Header from '../components/Header'
 import Home from '../pages/Home'
 import MovieDetails from '../containers/MovieDetails';
 import FourOhFour from '../pages/FourOhFour';
+import './App.css'
 
 const browserHistory = createHistory()
 
@@ -24,7 +25,7 @@ const Routes = () => (
 );
 
 const Main = () => (
-  <div>
+  <div className="container">
     <Header />
     <Routes />
   </div>
