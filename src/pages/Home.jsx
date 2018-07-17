@@ -1,12 +1,17 @@
 import React from 'react';
 import MovieList from '../containers/MovieList';
 
-const Home = () => (
-  <div>
-    <MovieList />
-  </div>  
-);
+class Home extends React.Component {
 
-Home.defaultProps = {};
+  componentDidMount(){
+    this.props.setActiveTab();
+  }
+
+  render() {
+    return (<div>
+      <MovieList />
+    </div>)
+  }
+}
 
 export default Home;

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import MovieList from "../components/MovieList";
-import {requestMovieList} from '../actions/movieList';
+import { requestMovieList } from '../actions/movieList';
 
 export const mapStateToProps = (state) => {
   return {
@@ -10,11 +10,11 @@ export const mapStateToProps = (state) => {
 
 
 export const mapDispatchToProps = (dispatch) => {
-    return {
+  return {
 
     requestMovieList: () => dispatch(requestMovieList())
-}
+  }
 }
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(MovieList);
+export default connect(mapStateToProps, mapDispatchToProps)(MovieList);
