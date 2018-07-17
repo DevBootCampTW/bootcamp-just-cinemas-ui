@@ -1,5 +1,7 @@
-export const fetchMovieDetails = () => {
-  return window.fetch("http://somemovieapi.com/movie/123")
+import {MOVIE_ENDPOINT} from './endPoints';
+
+export const fetchMovieDetails = (id) => {
+  console.log("fetchMovieDetails ")
+  return window.fetch(`${MOVIE_ENDPOINT}${id}`)
   .then((res) => res.json())
-  .catch(console.log)
 }

@@ -2,13 +2,12 @@ import React from 'react';
 import { Route, Switch } from 'react-router';
 import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
-import configureStore from './store';
+import { configureStore } from './store';
 import createHistory from 'history/createBrowserHistory'
 import Header from '../components/Header'
 import Home from '../pages/Home'
-import MovieDetails from '../pages/MovieDetails';
+import MovieDetails from '../containers/MovieDetails';
 import FourOhFour from '../pages/FourOhFour';
-
 
 const browserHistory = createHistory()
 

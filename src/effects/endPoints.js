@@ -1,0 +1,1 @@
+export const MOVIE_ENDPOINT = "http://localhost:9090/movies/";
