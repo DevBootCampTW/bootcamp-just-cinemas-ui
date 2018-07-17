@@ -1,9 +1,9 @@
 import React from 'react';
-import MovieGrid from '../components/MovieGrid';
+import MovieList from '../containers/MovieList';
 
 const Home = () => (
   <div>
-    <MovieGrid />
+    <MovieList />
   </div>  
 );
 

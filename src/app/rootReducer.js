@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux-loop';
 import { routerReducer } from 'react-router-redux';
-import movies from '../reducers/movies';
+import movieList from '../reducers/movieList';
 import movieDetails from '../reducers/movieDetails';
 
 const rootReducer = combineReducers({
-  movies,
+  movieList,
   movieDetails,
   routing: routerReducer,
 });
