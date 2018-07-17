@@ -23,20 +23,6 @@ class MovieList extends Component {
             </div>
         );
     }
-
-    showProgress() {
-        return (
-            < div > Loading... < /div>
-    )
-        ;
-    }
-
-    showError() {
-        return (
-            < div > Error... < /div>
-    )
-        ;
-    }
 }
 
 export default MovieList;
