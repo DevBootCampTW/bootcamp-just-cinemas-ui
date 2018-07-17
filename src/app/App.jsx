@@ -25,7 +25,7 @@ const Routes = () => (
 );
 
 const Main = () => (
-  <div className="container">
+  <div className="container panel">
     <Header />
     <Routes />
   </div>

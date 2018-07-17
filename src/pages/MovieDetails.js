@@ -17,29 +17,30 @@ class MovieDetails extends React.Component {
     return <h6 className="loadingError">Error loading movie details</h6>
   }
 
-  renderStills(stills){
+  renderStills(stills) {
     return stills.map(imgSrc => {
-      return(<div className="col-xs-6 col-md-3">
+      return (<div className="col-md-2">
         <a href="#" className="thumbnail">
           <img src={imgSrc} alt="still" />
         </a>
       </div>
-      )})
+      )
+    })
   }
-    
-  render(){
 
-    if(this.props.loading){
+  render() {
+
+    if (this.props.loading) {
       return this.renderLoading();
     }
 
-    if(this.props.error) {
+    if (this.props.error) {
       return this.renderError();
     }
 
     const movie = this.props.movie;
 
-    if(!movie){
+    if (!movie) {
       return <div></div>
     }
 
@@ -48,27 +49,28 @@ class MovieDetails extends React.Component {
         <div className="clearfix">
           <b>{movie.title}</b> English | Hindi
           </div>
-        <img src={movie.poster} alt="Movie Poster" className="poster" />
-        <div>
-          <div className="clearfix">
-            <b className="float-left">SYNOPSIS</b>
-            <button className="float-right">BOOK SEAT</button>
+        <img src={movie.poster} alt="Movie Poster" className="poster" width="100%" height="300rem"/>
+        <div style={{paddingTop: "1rem"}}>
+          <div>
+            <div style={{ float: "left" }}><b>SYNOPSIS</b></div>
+            <div style={{ float: "right" }}><button className="btn btn-danger">BOOK SEAT</button></div>
           </div>
-          <p>{movie.plot}</p>
+          <div style={{paddingTop: "2rem"}}><p>{movie.plot}</p>
           <p><b>Sound Effects:</b> {movie.soundEffects.join(" | ")}</p>
           <p><b>IMDB Ratings:</b> {movie.imdbRating}</p>
+          </div>
           <div>
-            <b>IMAGES</b>
+            <div><b>IMAGES</b></div>
             <div className="row stills">
-            {this.renderStills(movie.stills)}
+              {this.renderStills(movie.stills)}
             </div>
           </div>
         </div>
 
       </div>
-      )
-    }
-  
+    )
   }
-  
+
+}
+
 export default MovieDetails;
