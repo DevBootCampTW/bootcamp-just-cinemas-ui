@@ -30,7 +30,7 @@ describe('MovieItem Component', ()=> {
     }
     const wrapper = shallow(<MovieItem movie={movie} history={history} />);
 
-    wrapper.find('.card-title').simulate('click');
+    wrapper.find('.card-title-movie').simulate('click');
 
     expect(history.push).toBeCalledWith("/movie/123");
   })
