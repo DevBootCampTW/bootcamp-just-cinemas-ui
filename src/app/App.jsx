@@ -6,12 +6,12 @@ import { configureStore } from './store';
 import createHistory from 'history/createBrowserHistory'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import Home from '../containers/Home'
+import Home from '../pages/Home'
 import MovieDetails from '../containers/MovieDetails';
 import FourOhFour from '../pages/FourOhFour';
 import './App.css'
 import NavBar from '../containers/NavBar';
-import UpComing from '../containers/UpComing';
+import UpComing from '../pages/UpComing';
 
 const browserHistory = createHistory()
 

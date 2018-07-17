@@ -1,4 +1,5 @@
 import React from 'react';
+import withTab from '../containers/withTab';
 
 class UpComing extends React.Component {
 
@@ -11,4 +12,4 @@ class UpComing extends React.Component {
   }
 }
 
-export default UpComing;
+export default withTab(UpComing);

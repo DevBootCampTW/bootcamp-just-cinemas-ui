@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieList from '../containers/MovieList';
+import withTab from '../containers/withTab';
 
 class Home extends React.Component {
 
@@ -14,4 +15,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default withTab(Home);
