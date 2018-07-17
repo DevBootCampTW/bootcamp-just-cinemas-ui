@@ -1,4 +1,4 @@
-import {fetchMovieDetails} from '../../effects/movieDetails'
+import {fetchMovieDetails} from '../../src/effects/movieDetails'
 
 describe('MovieDetails Effect', () =>
   it('fetchMovieDetails should return movie json', () => {

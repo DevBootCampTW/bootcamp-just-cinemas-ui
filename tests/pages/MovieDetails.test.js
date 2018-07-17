@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import MovieDetails from '../../pages/MovieDetails';
+import MovieDetails from '../../src/pages/MovieDetails';
 
 describe('MovieDetailsPage', () => {
   it('should call getMovieDetails', () => {

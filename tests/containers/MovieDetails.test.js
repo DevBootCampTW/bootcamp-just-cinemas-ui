@@ -1,4 +1,4 @@
-import {mapStateToProps, mapDispatchToProps} from '../../containers/MovieDetails';
+import {mapStateToProps, mapDispatchToProps} from '../../src/containers/MovieDetails';
 
 describe('MovieDetailsContainer', ()=> {
   it('should map stateToProps', ()=> {

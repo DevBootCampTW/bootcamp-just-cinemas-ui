@@ -1,7 +1,7 @@
 import { Cmd, loop } from 'redux-loop';
-import movieDetailsReducer from '../../reducers/movieDetails';
-import {fetchMovieDetails} from '../../effects/movieDetails';
-import {receiveMovieDetails, receiveMovieDetailsFailed} from '../../actions/movieDetails';
+import movieDetailsReducer from '../../src/reducers/movieDetails';
+import {fetchMovieDetails} from '../../src/effects/movieDetails';
+import {receiveMovieDetails, receiveMovieDetailsFailed} from '../../src/actions/movieDetails';
 
 describe('MovieDetails Reducer', () => {
   it('should', () => {
