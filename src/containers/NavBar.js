@@ -1,7 +1,7 @@
 import NavBar from '../components/NavBar';
 import { connect } from 'react-redux';
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return ({
       activeTab: state.navBar.activeTab
   })
