@@ -12,4 +12,5 @@ class UpComing extends React.Component {
   }
 }
 
+export { UpComing };
 export default withTab(UpComing);
