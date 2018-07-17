@@ -49,13 +49,22 @@
 
 /* Add some padding inside the card container */
 .container-movie {
-
+width:190px;
+height:5em;
+position:relative;
 }
 .card-title-movie {
     padding : 5px;
     color: steelblue;
+    font-size:medium;
 }
 .card-text-movie
 {
-font-size: medium;
+font-size: small;
+margin-right:10px
+}
+.card-text-wrapper{
+position: absolute;
+    bottom: 0px;
+    width:100%
 }
