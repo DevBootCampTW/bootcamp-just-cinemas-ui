@@ -5,13 +5,15 @@ describe('MovieDetailsContainer', ()=> {
     const state = {
       movieDetails: {
         movie: {},
-        loading: true
+        loading: true,
+        error: {}
       }
     }
     const props = mapStateToProps(state);
 
     expect(props.loading).toBeTruthy();
     expect(props.movie).toBe(state.movieDetails.movie)
+    expect(props.error).toBe(state.movieDetails.error)
   })
 
   it('should map dispatchToProps', ()=> {
