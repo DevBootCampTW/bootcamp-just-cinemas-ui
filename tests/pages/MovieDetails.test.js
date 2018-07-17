@@ -56,19 +56,6 @@ describe('MovieDetailsPage', () => {
 
   })
 
-  it('should render Movie Not Found', () => {
-    const match = {
-      params: {
-        id: '123'
-      }
-    }
-    const node = shallow(<MovieDetails getMovieDetails={()=>{}} match={match} movie={null} />)
-
-    const element = node.find('.movieNotFound');
-    expect(element.text()).toContain("Movie not found")
-
-  })
-
   it('should render stills', () => {
     const match = {
       params: {

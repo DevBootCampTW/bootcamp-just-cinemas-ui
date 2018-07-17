@@ -17,10 +17,6 @@ class MovieDetails extends React.Component {
     return <h6 className="loadingError">Error loading movie details</h6>
   }
 
-  renderMovieNotFound() {
-    return <h6 className="movieNotFound">Movie not found</h6>
-  }
-
   renderStills(stills){
     return stills.map(imgSrc => {
       return(<div className="col-xs-6 col-md-3">
@@ -42,10 +38,10 @@ class MovieDetails extends React.Component {
     }
 
     const movie = this.props.movie;
-    if(!movie){
-      return this.renderMovieNotFound();
-    }
 
+    if(!movie){
+      return <div></div>
+    }
 
     return (
       <div>

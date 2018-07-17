@@ -1,6 +1,9 @@
-import {MOVIE_ENDPOINT} from './endPoints';
+import { MOVIE_ENDPOINT } from './endPoints';
+import axios from 'axios';
 
 export const fetchMovieDetails = (id) => {
-  return window.fetch(`${MOVIE_ENDPOINT}${id}`)
-  .then((res) => res.json())
+  return axios.get(`${MOVIE_ENDPOINT}${id}`)
+    .then((res) => {
+      return res.data
+    })
 }
