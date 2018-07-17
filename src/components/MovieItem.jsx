@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
 
-class MovieItem extends Component {
+export class MovieItem extends Component {
 
 
     render() {
