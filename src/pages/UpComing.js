@@ -1,10 +1,10 @@
 import React from 'react';
-import withTab from '../containers/withTab';
+import withTab, {UPCOMING} from '../containers/withTab';
 
 class UpComing extends React.Component {
 
   componentDidMount(){
-    this.props.setActiveTab();
+    this.props.setActiveTab(UPCOMING);
   }
 
   render(){
