@@ -1,4 +1,5 @@
 import React from 'react';
+import MovieStills  from '../components/MovieStills';
 
 class MovieDetails extends React.Component {
 
@@ -15,16 +16,6 @@ class MovieDetails extends React.Component {
 
   renderError() {
     return <h6 className="loadingError">Error loading movie details</h6>
-  }
-
-  renderStills(stills) {
-    return stills.map(imgSrc => {
-      return (<div key={imgSrc} className="col-md-2">
-        <img style={{ width: 100 + '%' }} src={imgSrc} alt="still" />
-
-      </div>
-      )
-    })
   }
 
   render() {
@@ -59,10 +50,7 @@ class MovieDetails extends React.Component {
             <p><b>IMDB Ratings:</b> {movie.imdbRating}</p>
           </div>
           <div>
-            <div><b>IMAGES</b></div>
-            <div className="row stills">
-              {this.renderStills(movie.stills)}
-            </div>
+            <b>IMAGES {<MovieStills stills={movie.stills} />}</b>
           </div>
         </div>
       </div>

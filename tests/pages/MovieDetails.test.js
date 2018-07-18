@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import MovieDetails from '../../src/pages/MovieDetails';
+import MovieStills from '../../src/components/MovieStills'
 
 describe('MovieDetailsPage', () => {
   it('should call getMovieDetails', () => {
@@ -56,7 +57,7 @@ describe('MovieDetailsPage', () => {
 
   })
 
-  it('should render stills', () => {
+  it('should render MovieStills component', () => {
     const match = {
       params: {
         id: '123'
@@ -69,8 +70,7 @@ describe('MovieDetailsPage', () => {
     }
     const node = shallow(<MovieDetails getMovieDetails={() => { }} match={match} movie={movie} />)
 
-    const elements = node.find('.stills').find('img');
-    expect(elements.at(0).prop('src')).toBe('1.jpg');
-    expect(elements.at(1).prop('src')).toBe('2.jpg');
+    const elements = node.find('MovieStills');
+    expect(elements.length).toBe(1);
   })
 })
