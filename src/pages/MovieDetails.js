@@ -19,8 +19,8 @@ class MovieDetails extends React.Component {
 
   renderStills(stills) {
     return stills.map(imgSrc => {
-      return (<div className="col-md-2">
-          <img style={{width:100+'%'}} src={imgSrc} alt="still" />
+      return (<div key={imgSrc} className="col-md-2">
+        <img style={{ width: 100 + '%' }} src={imgSrc} alt="still" />
 
       </div>
       )
@@ -47,16 +47,16 @@ class MovieDetails extends React.Component {
       <div>
         <div className="clearfix">
           <b>{movie.title}</b>
-          </div>
-        <img src={movie.poster} alt="Movie Poster" className="poster" width="100%" height="300rem"/>
-        <div style={{paddingTop: "1rem"}}>
+        </div>
+        <img src={movie.poster} alt="Movie Poster" className="poster" width="100%" height="300rem" />
+        <div style={{ paddingTop: "1rem" }}>
           <div>
-            <div style={{ float: "left",'padding-top': '10px' }}><b>SYNOPSIS</b></div>
+            <div style={{ float: "left", 'padding-top': '10px' }}><b>SYNOPSIS</b></div>
             <div style={{ float: "right" }}><button className="btn btn-danger">BOOK SEAT</button></div>
           </div>
-          <div style={{paddingTop: "3rem"}}><p>{movie.plot}</p>
-          <p><b>Sound Effects:</b> {movie.soundEffects.join(" | ")}</p>
-          <p><b>IMDB Ratings:</b> {movie.imdbRating}</p>
+          <div style={{ paddingTop: "3rem" }}><p>{movie.plot}</p>
+            <p><b>Sound Effects:</b> {movie.soundEffects.join(" | ")}</p>
+            <p><b>IMDB Ratings:</b> {movie.imdbRating}</p>
           </div>
           <div>
             <div><b>IMAGES</b></div>
@@ -65,7 +65,6 @@ class MovieDetails extends React.Component {
             </div>
           </div>
         </div>
-
       </div>
     )
   }

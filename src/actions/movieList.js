@@ -3,7 +3,6 @@ export const RECEIVE_MOVIE_LIST = "RECEIVE_MOVIE_LIST";
 export const RECEIVE_MOVIE_LIST_FAILED = "RECEIVE_MOVIE_LIST_FAILED";
 
 export const requestMovieList = () => {
-  console.log("its finally here");
   return {
     type: REQUEST_MOVIE_LIST
   }

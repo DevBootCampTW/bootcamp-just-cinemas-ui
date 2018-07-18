@@ -11,7 +11,7 @@ class MovieList extends Component {
         return (
             <div className="row">
                 {
-                    this.props.movies.map((movie) => <MovieItem movie={movie} />)
+                    this.props.movies.map((movie) => <MovieItem key={movie.imdbID} movie={movie} />)
                 }
             </div>
         );

@@ -72,6 +72,5 @@ describe('MovieDetailsPage', () => {
     const elements = node.find('.stills').find('img');
     expect(elements.at(0).prop('src')).toBe('1.jpg');
     expect(elements.at(1).prop('src')).toBe('2.jpg');
-
   })
 })

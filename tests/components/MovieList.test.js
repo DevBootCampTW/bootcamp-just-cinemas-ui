@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 describe("MovieList [Components]", () => {
     it('should call requestMovieList', () => {
         const requestMovieList = jest.fn();
-        const movies = [{title: "Test Movie"}]
+        const movies = [{title: "Test Movie", imdbID: "1"}]
 
         const node = shallow(<MovieList requestMovieList={requestMovieList} movies={movies}/>)
 

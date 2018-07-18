@@ -8,16 +8,21 @@ export class MovieItem extends Component {
         return this.showMovies();
     }
 
+    onClickOfMovie(imdbId)
+    {
+        this.props.history.push(`/movie/${imdbId}`);
+    }
+
     showMovies() {
         return (
             <div className="card-movie">
                 <img src={this.props.movie['poster']} className="card-img-top" 
                     style={{width:200+'px',height:200+'px', cursor: "pointer"}}
-                    onClick={()=>this.props.history.push(`/movie/${this.props.movie.imdbID}`)}
+                    onClick={this.onClickOfMovie(this.props.movie.imdbID)}
                 />
                 <div className="container-movie">
                     <p className="card-title-movie " style={{cursor: "pointer"}}
-                        onClick={()=>this.props.history.push(`/movie/${this.props.movie.imdbID}`)}>
+                        onClick={this.onClickOfMovie(this.props.movie.imdbID)}>
                         {this.props.movie['title']}
                     </p>
                     <div className="card-text-wrapper">
