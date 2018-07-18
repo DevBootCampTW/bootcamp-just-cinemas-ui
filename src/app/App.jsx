@@ -1,9 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
 import { ConnectedRouter } from 'react-router-redux';
-import { Provider } from 'react-redux';
-import { configureStore } from './store';
-import createHistory from 'history/createBrowserHistory'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Home from '../pages/Home'
@@ -13,12 +10,8 @@ import './App.css'
 import NavBar from '../containers/NavBar';
 import UpComing from '../pages/UpComing';
 
-const browserHistory = createHistory()
-
-const store = configureStore(browserHistory);
-
-const Routes = () => (
-  <ConnectedRouter history={browserHistory}>
+const Routes = ({history}) => (
+  <ConnectedRouter history={history}>
     <div>
       <NavBar />
       <div className="tab-content tabs">
@@ -33,18 +26,16 @@ const Routes = () => (
   </ConnectedRouter>
 );
 
-const Main = () => (
+const Main = ({history}) => (
   <div className="container panel">
     <Header />
-    <Routes />
+    <Routes history={history}/>
     <Footer />
   </div>
 );
 
-const App = () => (
-  <Provider store={store} >
-    <Main />
-  </Provider>
+const App = ({history}) => (
+    <Main history={history} />
 );
 
 export default App;
