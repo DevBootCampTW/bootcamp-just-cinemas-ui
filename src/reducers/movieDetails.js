@@ -29,8 +29,9 @@ const movieDetailsReducer = (state = { loading: false, movie: null }, action) =>
         movie: null,
         error: action.payload
       }
+
+    default: return state;
   }
-  return state;
 }
 
 export default movieDetailsReducer;

@@ -6,8 +6,9 @@ const navBarReducer = (state = {}, action) => {
       ...state,
       activeTab: action.payload
     }
+
+    default: return state;
   }
-  return state;
 }
 
 export default navBarReducer;
