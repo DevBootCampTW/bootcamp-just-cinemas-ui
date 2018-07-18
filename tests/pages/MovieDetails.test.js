@@ -35,7 +35,7 @@ describe('MovieDetailsPage', () => {
         id: '123'
       }
     }
-    const node = shallow(<MovieDetails getMovieDetails={()=>{}} match={match} loading={true} />)
+    const node = shallow(<MovieDetails getMovieDetails={() => { }} match={match} loading={true} />)
 
     const element = node.find('.loader');
     expect(element.text()).toContain("Loading...")
@@ -48,8 +48,8 @@ describe('MovieDetailsPage', () => {
         id: '123'
       }
     }
-    const error = { errorMessage : "Something went wrong"};
-    const node = shallow(<MovieDetails getMovieDetails={()=>{}} match={match} error={error} />)
+    const error = { errorMessage: "Something went wrong" };
+    const node = shallow(<MovieDetails getMovieDetails={() => { }} match={match} error={error} />)
 
     const element = node.find('.loadingError');
     expect(element.text()).toContain("Error loading movie details")
@@ -67,7 +67,7 @@ describe('MovieDetailsPage', () => {
       stills: ["1.jpg", "2.jpg"],
       soundEffects: []
     }
-    const node = shallow(<MovieDetails getMovieDetails={()=>{}} match={match} movie={movie} />)
+    const node = shallow(<MovieDetails getMovieDetails={() => { }} match={match} movie={movie} />)
 
     const elements = node.find('.stills').find('img');
     expect(elements.at(0).prop('src')).toBe('1.jpg');
