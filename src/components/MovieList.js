@@ -7,7 +7,23 @@ class MovieList extends Component {
         this.props.requestMovieList();
     }
 
+    renderLoading() {
+        return <h3 className="loader">Loading...</h3>
+    }
+
+    renderError() {
+        return <h3 className="loadingError">Error Loading Movies...</h3>
+    }
+
     render() {
+        if (this.props.loading) {
+            return this.renderLoading();
+        }
+
+        if (this.props.error) {
+            return this.renderError();
+        }
+
         return (
             <div className="row">
                 {

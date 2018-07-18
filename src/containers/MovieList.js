@@ -4,7 +4,9 @@ import { requestMovieList } from '../actions/movieList';
 
 export const mapStateToProps = (state) => {
   return {
-    movies: state.movieList.movies
+    movies: state.movieList.movies,
+    loading: state.movieList.loading,
+    error: state.movieList.error
   }
 }
 

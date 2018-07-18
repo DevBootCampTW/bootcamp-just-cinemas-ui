@@ -5,11 +5,59 @@ import { shallow } from 'enzyme';
 describe("MovieList [Components]", () => {
     it('should call requestMovieList', () => {
         const requestMovieList = jest.fn();
-        const movies = [{title: "Test Movie", imdbID: "1"}]
+        const state = {
+            movies: [{title: "Test Movie", imdbID: "1"}],
+            error: null,
+            loading: true
+        }
 
-        const node = shallow(<MovieList requestMovieList={requestMovieList} movies={movies}/>)
+        const node = shallow(<MovieList requestMovieList={requestMovieList} movies={state.movies} loading={state.loading}/>)
 
         expect(requestMovieList).toBeCalled();
 
     })
+
+    it('should render loading', () => {
+        const requestMovieList = jest.fn();
+        const state = {
+            movies: [{title: "Test Movie", imdbID: "1"}],
+            error: null,
+            loading: true
+        }
+
+        const node = shallow(<MovieList requestMovieList={requestMovieList} movies={state.movies} loading={state.loading} />)
+    
+        const element = node.find('.loader');
+        expect(element.text()).toContain("Loading...")
+      })
+    
+      it('should render error', () => {
+        const requestMovieList = jest.fn();
+        const state = {
+            movies: [{title: "Test Movie", imdbID: "1"}],
+            error: "Error Loading Movies..",
+            loading: true
+        }
+        const node = shallow(<MovieList requestMovieList={requestMovieList} movies={state.movies} error={state.error}/>)
+    
+        const element = node.find('.loadingError');
+        expect(element.text()).toContain("Error Loading Movies")
+      })
+
+    //   it('should render MovieItem component', () => {
+    //     const requestMovieList = jest.fn();
+    //     const state = {
+    //         movies: [{title: "Test Movie", imdbID: "1"}],
+    //         error: null,
+    //         loading: false
+    //     }
+
+    //     const node = shallow(<MovieList requestMovieList={requestMovieList} movies={state.movies} loading={state.loading}/>)
+    //     // console.log(node.props())
+    //     // const elements = node.find('.row').prop('children')[0].type['displayName'];    
+    //     const elements = node.find('.row').prop('children')[0];   
+    //     console.log(elements);         
+    //     expect(elements).toBe(state.movies[0]);
+    // })
+
 })

@@ -2,7 +2,7 @@ import { RECEIVE_MOVIE_LIST, receiveMovieList, receiveMovieListFailed, REQUEST_M
 import { loop, Cmd } from "redux-loop";
 import { fetchMovieList } from "../effects/movieList";
 
-const movieListReducer = (state = { loading: false, movies: [] }, action) => {
+const movieListReducer = (state = { loading: true, movies: [] }, action) => {
     switch (action.type) {
         case REQUEST_MOVIE_LIST: return loop({
                 ...state,
@@ -19,6 +19,7 @@ case RECEIVE_MOVIE_LIST:
         return {
             ...state,
             loading: false,
+            error: null,
         movies: action.payload
 }
 
