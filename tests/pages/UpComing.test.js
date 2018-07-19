@@ -1,29 +1,28 @@
-import UpComing, {UpComing as UpComingComp} from '../../src/pages/UpComing';
 import React from 'react';
-import {shallow} from 'enzyme';
+import {mount} from 'enzyme';
 import configureStore from 'redux-mock-store';
+import {Provider} from 'react-redux';
+import UpComing from '../../src/pages/UpComing';
+import MovieList from '../../src/containers/MovieList';
 
-const initialState = {};
+const initialState = {
+  movieList: {
+    movies: []
+  }
+};
 const mockStore = configureStore();
 let store = null;
 
-describe('UpComing page', ()=> {
+describe('Upcoming movies Page', ()=> {
 
   beforeEach(() => {
     store = mockStore(initialState)
    });
+  
+  it('should render upcoming page with movie list', () => {
+    const wrapper = mount(<Provider store={store}><UpComing /></Provider>);
 
-  it('should render upcoming', () => {
-    const wrapper = shallow(<UpComing store={store}/>);
-
-    expect(wrapper.html()).toContain('Coming soon..')
-  });
-
-  it('should call setActiveTab on mount', () => {
-    const setActiveTab = jest.fn();
-    shallow(<UpComingComp setActiveTab={setActiveTab}/>);
-
-    expect(setActiveTab).toBeCalledWith("UP_COMING");
-
-  });
+    expect(wrapper.find(MovieList).exists()).toBeTruthy();
+    expect(wrapper.find(MovieList).prop('listingType')).toBe('UP_COMING');
+  })
 })
