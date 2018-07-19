@@ -7,7 +7,7 @@ describe('MovieDetails Effect', () =>
     const mock = new MockAdapter(axios);
 
     const movie = { imdbId: "123", Title: "Some Movie" };
-    mock.onGet('http://18.211.150.89:9090/movies/123').reply(200, movie);
+    mock.onGet('http://localhost:9090/movies/123').reply(200, movie);
 
     return fetchMovieDetails("123")
       .then(res => {

@@ -68,3 +68,18 @@ position: absolute;
     bottom: 0px;
     width:100%
 }
+.filter{
+height:50px;
+}
+.Dropdown-root{
+width :150px;
+float:right;
+margin-right:10px;
+}
+
+.Dropdown-control
+{
+background-color:#ccc;
+color: #000
+
+}

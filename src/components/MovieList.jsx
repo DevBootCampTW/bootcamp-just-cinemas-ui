@@ -44,14 +44,17 @@ class MovieList extends Component {
         }
 
         return (
+        <div>
+        <div className="filter">
+                  <SelectionFilter key={'Language'} filter={languageList} onFilterChange={this.onLanguageChange} value={this.props.language} />
+                  <SelectionFilter key={'Location'} filter={locationList} onFilterChange={this.onLocationChange} value={this.props.location} />
+        </div>
             <div className="row">
-                <div>
-                    <SelectionFilter key={'Language'} filter={languageList} onFilterChange={this.onLanguageChange} value={this.props.language} />
-                    <SelectionFilter key={'Location'} filter={locationList} onFilterChange={this.onLocationChange} value={this.props.location} />
-                </div>
+
                 {
                     this.props.movies.map((movie) => <MovieItem key={movie.imdbID} movie={movie} />)
                 }
+            </div>
             </div>
         );
     }

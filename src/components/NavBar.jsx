@@ -9,7 +9,7 @@ class NavBar extends React.Component {
   render() {
     const activeTab = this.props.activeTab;
     return (
-      <ul className="nav nav-tabs" role="tablist" id="nav">
+      <ul className="nav" role="tablist" id="nav">
         <li style={{ 'marginRight': 3 + 'px' }} className={activeTab === NOW_SHOWING ? activeTabClass : defaultTabClass}>
           <NavLink style={{ color: 'white', 'textDecoration': 'none' }} activeClassName="active" to='/'>
             <span>Now Showing</span>
