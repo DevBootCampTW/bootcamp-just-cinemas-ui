@@ -23,7 +23,7 @@ describe('UpComing page', ()=> {
     const setActiveTab = jest.fn();
     shallow(<UpComingComp setActiveTab={setActiveTab}/>);
 
-    expect(setActiveTab).toBeCalledWith("UPCOMING");
+    expect(setActiveTab).toBeCalledWith("UP_COMING");
 
   });
 })

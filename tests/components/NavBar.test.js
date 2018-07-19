@@ -18,7 +18,7 @@ describe('NavBar component', ()=> {
   })
 
   it('should render active upcoming tab', ()=> {
-    const wrapper = shallow(<NavBar activeTab="UPCOMING" />);
+    const wrapper = shallow(<NavBar activeTab="UP_COMING" />);
 
     const links = wrapper.find(NavLink);
     const lists = wrapper.find('li');

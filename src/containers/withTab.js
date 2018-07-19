@@ -17,5 +17,5 @@ const withTab = (Component) => {
 
 export default withTab;
 
-export const UPCOMING = "UPCOMING";
+export const UPCOMING = "UP_COMING";
 export const NOW_SHOWING = "NOW_SHOWING";
