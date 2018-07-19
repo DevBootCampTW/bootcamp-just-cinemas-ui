@@ -27,7 +27,7 @@ const Routes = ({history}) => (
 );
 
 const Main = ({history}) => (
-  <div className="container panel">
+  <div className="container panel border">
     <Header />
     <Routes history={history}/>
     <Footer />
