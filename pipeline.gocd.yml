@@ -28,7 +28,7 @@ pipelines:
               tasks:
                 - script: |
                     yarn --ignore-engines install
-                    REACT_APP_API_URL="http://localhost:9090" yarn run build              
+                    REACT_APP_API_URL="http://18.211.150.89:9090" yarn run build              
 
       - deploy:
            jobs:
