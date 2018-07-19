@@ -7,8 +7,6 @@ export const fetchMovieList = (movieFilter) => {
         queryParams = queryParams + `&${PARAM_LANGUAGE}=${movieFilter.language}`;
     }
 
-    console.log(`${MOVIE_ENDPOINT}?${queryParams}`);
-
     return axios.get(`${MOVIE_ENDPOINT}?${queryParams}`)
         .then((res) => {
             return res.data
