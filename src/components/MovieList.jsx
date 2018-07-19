@@ -8,11 +8,11 @@ class MovieList extends Component {
     }
 
     renderLoading() {
-        return <h3 className="loader">Loading...</h3>
+        return <h6 className="loader">Loading...</h6>
     }
 
     renderError() {
-        return <h3 className="loadingError">Error Loading Movies...</h3>
+        return <h6 className="loadingError">Error Loading Movies...</h6>
     }
 
     render() {
