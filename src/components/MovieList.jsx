@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import MovieItem from './MovieItem'
 import SelectionFilter from './SelectionFilter';
 
-const locationList = ['Pune', 'Bangalore', 'Chennai'];
-const languageList = ['English', 'Hindi']
+const locationList = ['Pune', 'Bangalore', 'Chennai', 'Delhi'];
+const languageList = ['All', 'English', 'Hindi']
 
 class MovieList extends Component {
 
