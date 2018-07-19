@@ -1,6 +1,9 @@
 import React from 'react';
 import MovieList from '../../src/components/MovieList';
-import { shallow } from 'enzyme';
+
+jest.mock('../../src/components/MovieItem');
+import MovieItem from '../../src/components/MovieItem';
+import { shallow, mount } from 'enzyme';
 
 describe("MovieList [Components]", () => {
     it('should call requestMovieList with now showing', () => {
@@ -44,20 +47,17 @@ describe("MovieList [Components]", () => {
         expect(element.text()).toContain("Error Loading Movies")
       })
 
-    //   it('should render MovieItem component', () => {
-    //     const requestMovieList = jest.fn();
-    //     const state = {
-    //         movies: [{title: "Test Movie", imdbID: "1"}],
-    //         error: null,
-    //         loading: false
-    //     }
+      it('should render MovieItem component', () => {
+        const requestMovieList = jest.fn();
+        const state = {
+            movies: [{title: "Test Movie", imdbID: "1"}],
+            error: null,
+            loading: false
+        }
 
-    //     const node = shallow(<MovieList requestMovieList={requestMovieList} movies={state.movies} loading={state.loading}/>)
-    //     // console.log(node.props())
-    //     // const elements = node.find('.row').prop('children')[0].type['displayName'];    
-    //     const elements = node.find('.row').prop('children')[0];   
-    //     console.log(elements);         
-    //     expect(elements).toBe(state.movies[0]);
-    // })
+        const node = shallow(<MovieList requestMovieList={requestMovieList} movies={state.movies} loading={state.loading}/>)
+               
+        expect(node.find(MovieItem).exists()).toBeTruthy();
+    })
 
 })
