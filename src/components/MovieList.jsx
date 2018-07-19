@@ -52,7 +52,7 @@ class MovieList extends Component {
             <div className="row">
 
                 {
-                    this.props.movies.map((movie) => <MovieItem key={movie.imdbID} movie={movie} />)
+                    this.props.movies.length?this.props.movies.map((movie) => <MovieItem key={movie.imdbID} movie={movie} />):"No movies match the filter."
                 }
             </div>
             </div>

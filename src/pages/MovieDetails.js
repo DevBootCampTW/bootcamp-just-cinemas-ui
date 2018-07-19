@@ -35,7 +35,7 @@ class MovieDetails extends React.Component {
     }
 
     return (
-      <div>
+      <div className="movie-grid-container">
         <div className="clearfix">
           <b>{movie.title}</b>
         </div>

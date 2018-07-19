@@ -9,7 +9,7 @@ class Home extends React.Component {
   }
 
   render() {
-    return (<div>
+    return (<div className="movie-grid-container">
       <MovieList listingType ={`${NOW_SHOWING}`} />
     </div>)
   }

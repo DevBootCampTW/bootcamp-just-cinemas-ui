@@ -10,7 +10,11 @@ class MovieStills extends React.Component {
     }
 
     renderImageTag(imageSource) {
-        return (<img key={imageSource} src={imageSource} alt="img-still" />
+        return (<div className="col-md-2" key={imageSource}>
+
+                       <img className="movie-stills"  src={imageSource} alt="img-still" />
+
+                      </div>
         )
     }
 }
