@@ -42,7 +42,7 @@ class MovieDetails extends React.Component {
         <img src={movie.poster} alt="Movie Poster" className="poster" width="100%" height="300rem" />
         <div style={{ paddingTop: "1rem" }}>
           <div>
-            <div style={{ float: "left", 'padding-top': '10px' }}><b>SYNOPSIS</b></div>
+            <div style={{ float: "left", 'paddingTop': '10px' }}><b>SYNOPSIS</b></div>
             <div style={{ float: "right" }}><button className="btn btn-danger">BOOK SEAT</button></div>
           </div>
           <div style={{ paddingTop: "3rem" }}><p>{movie.plot}</p>

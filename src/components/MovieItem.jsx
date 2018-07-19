@@ -15,7 +15,7 @@ export class MovieItem extends Component {
             <div className="card-movie">
                 <img src={this.props.movie['poster']} className="card-img-top"
                      style={{width: 200 + 'px', height: 200 + 'px', cursor: "pointer"}}
-                     onClick={this.onMovieClick}
+                     onClick={this.onMovieClick} alt={`${this.props.movie['title']}-poster`}
                 />
                 <div className="container-movie">
                     <p className="card-title-movie " style={{cursor: "pointer"}}
