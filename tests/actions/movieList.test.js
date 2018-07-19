@@ -2,9 +2,14 @@ import {receiveMovieList, requestMovieList, receiveMovieListFailed} from "../../
 
 describe("MovieList Action", () => {
     it('requestMovieList should return correct action', () => {
-        const action = requestMovieList("NOW_SHOWING");
+        var payloadFilter = {
+            listingType: "NOW_SHOWING",
+            language: "English",
+            location: "Pune"
+        }
+        const action = requestMovieList(payloadFilter.listingType, payloadFilter.language, payloadFilter.location);
 
-        expect(action).toEqual({type: "REQUEST_MOVIE_LIST", payload: "NOW_SHOWING" });
+        expect(action).toEqual({type: "REQUEST_MOVIE_LIST", payload: payloadFilter});
     })
 
     it('receiveMovieList should return correct action and payload', () => {

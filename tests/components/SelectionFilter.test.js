@@ -11,16 +11,4 @@ describe('SelectionFilter [Component]', () => {
         const dropdownFilter = wrapper.find(Dropdown);
         expect(dropdownFilter.prop('options')).toEqual(filter);
     })
-
-    it('should render correct location default value', () => {
-        const filter = ['Location1', 'Location2']
-        const defaultValue = filter[0]
-        const fn = jest.fn();
-        const wrapper = shallow(<SelectionFilter filter={filter} onFilterChange={fn} />);
-
-        const dropdownFilter = wrapper.find(Dropdown);
-        expect(dropdownFilter.prop('value')).toEqual(defaultValue);
-        expect(dropdownFilter.prop('onChange')).toEqual(fn);
-    })
-
 })

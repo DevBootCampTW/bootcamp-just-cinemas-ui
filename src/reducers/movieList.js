@@ -2,13 +2,15 @@ import { RECEIVE_MOVIE_LIST, receiveMovieList, receiveMovieListFailed, REQUEST_M
 import { loop, Cmd } from "redux-loop";
 import { fetchMovieList } from "../effects/movieList";
 
-const movieListReducer = (state = { loading: true, movies: [] }, action) => {
+const movieListReducer = (state = { loading: true, location:"Pune", language:"English", movies: [] }, action) => {
     switch (action.type) {
         case REQUEST_MOVIE_LIST: return loop({
             ...state,
             loading: true,
             movies: [],
-            error: null
+            error: null,
+            location: action.payload.location,
+            language: action.payload.language
         }, Cmd.run(fetchMovieList, {
             args: [action.payload],
             successActionCreator: receiveMovieList,

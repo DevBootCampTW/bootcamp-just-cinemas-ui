@@ -6,6 +6,8 @@ export const mapStateToProps = (state) => {
   return {
     movies: state.movieList.movies,
     loading: state.movieList.loading,
+    location : state.movieList.location,
+    language : state.movieList.language,
     error: state.movieList.error
   }
 }
@@ -14,7 +16,7 @@ export const mapStateToProps = (state) => {
 export const mapDispatchToProps = (dispatch) => {
   return {
 
-    requestMovieList: (listingType) => dispatch(requestMovieList(listingType))
+    requestMovieList: (listingType, language, location) => dispatch(requestMovieList(listingType, language, location), )
   }
 }
 

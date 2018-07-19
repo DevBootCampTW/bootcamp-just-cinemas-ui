@@ -27,11 +27,4 @@ describe('NavBar component', () => {
     expect(links.at(1).prop('to')).toEqual('/upcoming');
     expect(lists.at(1).prop('className')).toEqual('btn btn-dark');
   })
-
-  it('should render language dropdown', () => {
-    const wrapper = shallow(<NavBar />);
-    const lists = wrapper.find('SelectionFilter');
-
-    expect(lists.length).toEqual(2);
-  })
 })

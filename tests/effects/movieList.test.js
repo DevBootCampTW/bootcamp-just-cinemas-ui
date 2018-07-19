@@ -5,11 +5,15 @@ import MockAdapter from 'axios-mock-adapter';
 describe('MovieList [Effect]', () =>
     it('fetchMovieList should return movie json', () => {
         const mock = new MockAdapter(axios);
-
+        const payloadFilter = {
+            listingType: "NOW_SHOWING",
+            language: "English",
+            location: "Pune"
+        }
         const movie = { imdbId: "123", Title: "Test Movie" };
-        mock.onGet('http://18.211.150.89:9090/movies/?listingType=NOW_SHOWING').reply(200, movie);
+        mock.onGet('http://18.211.150.89:9090/movies/?listingType=NOW_SHOWING&language=English&location=Pune').reply(200, movie);
 
-        return fetchMovieList('NOW_SHOWING')
+        return fetchMovieList(payloadFilter)
             .then(res => {
                 expect(res).toEqual(movie)
             })

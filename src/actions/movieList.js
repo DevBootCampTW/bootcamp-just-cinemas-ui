@@ -2,10 +2,14 @@ export const REQUEST_MOVIE_LIST = "REQUEST_MOVIE_LIST";
 export const RECEIVE_MOVIE_LIST = "RECEIVE_MOVIE_LIST";
 export const RECEIVE_MOVIE_LIST_FAILED = "RECEIVE_MOVIE_LIST_FAILED";
 
-export const requestMovieList = (listingType) => {
+export const requestMovieList = (listingType, language, location) => {
   return {
     type: REQUEST_MOVIE_LIST,
-    payload: listingType
+    payload: {
+      listingType,
+      location,
+      language
+    }
   }
 }
 

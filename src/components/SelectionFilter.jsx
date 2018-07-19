@@ -8,7 +8,7 @@ class SelectionFilter extends React.Component {
         const options = this.props.filter;
         const defaultOption = options[0];
         return (
-            <Dropdown options={options} onChange={this.props.onFilterChange} value={defaultOption} />
+            <Dropdown options={options} onChange={this.props.onFilterChange} value={this.props.value}/>
         )
     }
 }

@@ -8,7 +8,7 @@ describe('MovieList [Reducer]', () => {
   it('should return same state if action does not match', ()=> {
     const newState = movieListReducer(undefined, {});
 
-    expect(newState).toEqual({movies: [], loading: true});
+    expect(newState).toEqual({movies: [], loading: true, language: "English", location: "Pune"});
   })
 
   it('should return a new state with loading on REQUEST_MOVIE_LIST action ', () => {

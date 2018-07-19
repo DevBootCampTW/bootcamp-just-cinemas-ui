@@ -16,8 +16,13 @@ describe("MovieList [Container]", () => {
     it("should dispatch mapDispatchToProps on requestMovieList", () => {
         const dispatch = jest.fn();
         const props = mapDispatchToProps(dispatch);
-        props.requestMovieList('NOW_SHOWING');
+        var payloadFilter = {
+            listingType: "NOW_SHOWING",
+            language: "English",
+            location: "Pune"
+        }
+        props.requestMovieList(payloadFilter.listingType, payloadFilter.language, payloadFilter.location);
 
-        expect(dispatch).toBeCalledWith({type: "REQUEST_MOVIE_LIST", payload: 'NOW_SHOWING'});
+        expect(dispatch).toBeCalledWith({type: "REQUEST_MOVIE_LIST", payload: payloadFilter});
     })
 });

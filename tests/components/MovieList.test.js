@@ -11,12 +11,14 @@ describe("MovieList [Components]", () => {
         const state = {
             movies: [{title: "Test Movie", imdbID: "1"}],
             error: null,
-            loading: true
+            loading: true,
+            language: 'English',
+            location: 'Pune'
         }
 
-        const node = shallow(<MovieList listingType={"NOW_SHOWING"} requestMovieList={requestMovieList} movies={state.movies} loading={state.loading}/>)
+        const node = shallow(<MovieList listingType={"NOW_SHOWING"} requestMovieList={requestMovieList} movies={state.movies} loading={state.loading} language={state.language} location={state.location}/>)
 
-        expect(requestMovieList).toBeCalledWith("NOW_SHOWING");
+        expect(requestMovieList).toBeCalledWith("NOW_SHOWING", "English", "Pune");
 
     })
 
@@ -59,5 +61,18 @@ describe("MovieList [Components]", () => {
                
         expect(node.find(MovieItem).exists()).toBeTruthy();
     })
+
+    it('should render language dropdown', () => {
+        const requestMovieList = jest.fn();
+        const state = {
+            movies: [{title: "Test Movie", imdbID: "1"}],
+            error: null,
+            loading: false
+        }
+        const wrapper = shallow(<MovieList requestMovieList={requestMovieList} movies={state.movies} loading={state.loading}/>);
+        const lists = wrapper.find('SelectionFilter');
+    
+        expect(lists.length).toEqual(2);
+      })
 
 })
