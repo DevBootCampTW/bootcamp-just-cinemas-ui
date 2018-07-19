@@ -7,9 +7,9 @@ describe('MovieList [Effect]', () =>
         const mock = new MockAdapter(axios);
 
         const movie = { imdbId: "123", Title: "Test Movie" };
-        mock.onGet('http://localhost:9090/movies/now-showing').reply(200, movie);
+        mock.onGet('http://localhost:9090/movies/?listingType=NOW_SHOWING').reply(200, movie);
 
-        return fetchMovieList()
+        return fetchMovieList('NOW_SHOWING')
             .then(res => {
                 expect(res).toEqual(movie)
             })

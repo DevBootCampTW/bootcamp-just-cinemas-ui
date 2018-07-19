@@ -12,7 +12,7 @@ describe('MovieList [Reducer]', () => {
   })
 
   it('should return a new state with loading on REQUEST_MOVIE_LIST action ', () => {
-    const action = { type: "REQUEST_MOVIE_LIST" };
+    const action = { type: "REQUEST_MOVIE_LIST", payload: "NOW_SHOWING" };
     const state = {movies: [], loading: false};
 
     const newState = movieListReducer(state, action);
@@ -23,7 +23,7 @@ describe('MovieList [Reducer]', () => {
       error: null
     },
       Cmd.run(fetchMovieList, {
-        args: [undefined],
+        args: ["NOW_SHOWING"],
         successActionCreator: receiveMovieList,
         failActionCreator: receiveMovieListFailed
       }));

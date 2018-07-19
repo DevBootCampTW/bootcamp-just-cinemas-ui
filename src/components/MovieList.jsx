@@ -4,7 +4,7 @@ import MovieItem from './MovieItem'
 class MovieList extends Component {
 
     componentDidMount() {
-        this.props.requestMovieList();
+        this.props.requestMovieList(this.props.listingType);
     }
 
     renderLoading() {

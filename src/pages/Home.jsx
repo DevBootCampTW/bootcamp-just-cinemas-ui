@@ -10,7 +10,7 @@ class Home extends React.Component {
 
   render() {
     return (<div>
-      <MovieList />
+      <MovieList listingType ={`${NOW_SHOWING}`} />
     </div>)
   }
 }

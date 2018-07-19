@@ -23,5 +23,6 @@ describe('Home Page', ()=> {
     const wrapper = mount(<Provider store={store}><Home /></Provider>);
 
     expect(wrapper.find(MovieList).exists()).toBeTruthy();
+    expect(wrapper.find(MovieList).prop('listingType')).toBe('NOW_SHOWING');
   })
 })

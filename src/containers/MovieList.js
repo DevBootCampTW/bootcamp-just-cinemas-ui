@@ -14,7 +14,7 @@ export const mapStateToProps = (state) => {
 export const mapDispatchToProps = (dispatch) => {
   return {
 
-    requestMovieList: () => dispatch(requestMovieList())
+    requestMovieList: (listingType) => dispatch(requestMovieList(listingType))
   }
 }
 

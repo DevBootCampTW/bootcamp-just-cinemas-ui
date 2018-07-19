@@ -3,7 +3,7 @@ import MovieList from '../../src/components/MovieList';
 import { shallow } from 'enzyme';
 
 describe("MovieList [Components]", () => {
-    it('should call requestMovieList', () => {
+    it('should call requestMovieList with now showing', () => {
         const requestMovieList = jest.fn();
         const state = {
             movies: [{title: "Test Movie", imdbID: "1"}],
@@ -11,9 +11,9 @@ describe("MovieList [Components]", () => {
             loading: true
         }
 
-        const node = shallow(<MovieList requestMovieList={requestMovieList} movies={state.movies} loading={state.loading}/>)
+        const node = shallow(<MovieList listingType={"NOW_SHOWING"} requestMovieList={requestMovieList} movies={state.movies} loading={state.loading}/>)
 
-        expect(requestMovieList).toBeCalled();
+        expect(requestMovieList).toBeCalledWith("NOW_SHOWING");
 
     })
 
