@@ -1,17 +1,14 @@
 import React from 'react';
+import Dropdown from 'react-dropdown'
+import 'react-dropdown/style.css'
 
 class SelectionFilter extends React.Component {
 
     render() {
+        const options = this.props.filter;
+        const defaultOption = options[0];
         return (
-            <div className="dropdown">
-                <button className="dropbtn">{this.props.filterName}
-                    <i className="fa fa-caret-down"></i>
-                </button>
-                <div className="dropdown-content">
-                    {this.props.filter.map((filterItem) => <a href="#" key={filterItem} >{filterItem}</a>)}
-                </div>
-            </div>
+            <Dropdown options={options} onChange={this.props.onFilterChange} value={defaultOption} />
         )
     }
 }
