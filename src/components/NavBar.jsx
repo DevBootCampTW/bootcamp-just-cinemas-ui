@@ -1,9 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import {UPCOMING, NOW_SHOWING} from '../containers/withTab';
+import SelectionFilter from './SelectionFilter';
 
 const activeTabClass = 'btn btn-dark';
 const defaultTabClass = 'btn btn-secondary';
+const location=['Pune', 'Bangalore', 'Chennai'];
+const language = ['English', 'Hindi']
 
 class NavBar extends React.Component {
   render() {
@@ -21,6 +24,9 @@ class NavBar extends React.Component {
             <span>Upcoming Releases</span>
           </NavLink>
         </li>
+
+        <SelectionFilter key={'Language'} filterName={'Language'} filter={location}/>
+        <SelectionFilter key={'Location'} filterName={'Location'} filter={language}/>
       </ul>
     );
   }
