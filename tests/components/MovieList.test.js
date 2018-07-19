@@ -75,4 +75,38 @@ describe("MovieList [Components]", () => {
         expect(lists.length).toEqual(2);
       })
 
+      it('should invoke languageChange handler', () => {
+        const requestMovieList = jest.fn();
+        const movies = [];
+        const listingType = "NOW_SHOWING";
+        const language="ENGLISH";
+        const location="BANGALORE";
+
+        const wrapper = shallow(<MovieList requestMovieList={requestMovieList} movies={movies} 
+        listingType={listingType} language={language} location={location}/>);
+        const lists = wrapper.find('SelectionFilter');
+    
+        const languageFilter = lists.at(0);
+        languageFilter.prop('onFilterChange')({value: 'HINDI'});
+
+        expect(requestMovieList).toHaveBeenLastCalledWith(listingType, 'HINDI', 'BANGALORE');
+      })
+
+      it('should invoke locationChange handler', () => {
+        const requestMovieList = jest.fn();
+        const movies = [];
+        const listingType = "NOW_SHOWING";
+        const language="ENGLISH";
+        const location="BANGALORE";
+
+        const wrapper = shallow(<MovieList requestMovieList={requestMovieList} movies={movies} 
+        listingType={listingType} language={language} location={location}/>);
+        const lists = wrapper.find('SelectionFilter');
+    
+        const locationFilter = lists.at(1);
+        locationFilter.prop('onFilterChange')({value: 'PUNE'});
+
+        expect(requestMovieList).toHaveBeenLastCalledWith(listingType, 'ENGLISH', 'PUNE');
+      })
+
 })
